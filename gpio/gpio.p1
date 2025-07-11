@@ -1,13 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
 "1600 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"350
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-[v F164 `(v ~T0 @X0 1 tf1`ul ]
-"20 /opt/microchip/xc8/v3.00/pic/include/builtins.h
-[v __delay `JF164 ~T0 @X0 0 e ]
-[p i __delay ]
+"4183
+[v _RD0 `Vb ~T0 @X0 0 e@64 ]
 "52 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
 [; <" INDF equ 00h ;# ">
 "59
@@ -164,56 +159,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "3544
 [; <" EECON2 equ 018Dh ;# ">
-"4 main.c
+"12 ./gpio.h
 [p x FOSC  =  INTRC_NOCLKOUT   ]
-"5
-[p x WDTE  =  OFF              ]
-"6
-[p x PWRTE  =  ON              ]
-"7
-[p x MCLRE  =  OFF             ]
-"8
-[p x CP  =  OFF                ]
-"9
-[p x CPD  =  OFF               ]
-"10
-[p x BOREN  =  OFF             ]
-"11
-[p x IESO  =  OFF              ]
-"12
-[p x FCMEN  =  OFF             ]
 "13
-[p x LVP  =  OFF               ]
+[p x WDTE  =  OFF              ]
+"14
+[p x PWRTE  =  ON              ]
+"15
+[p x MCLRE  =  OFF             ]
 "16
-[p x BOR4V  =  BOR40V          ]
+[p x CP  =  OFF                ]
 "17
-[p x WRT  =  OFF               ]
-[v $root$_main `(v ~T0 @X0 0 e ]
+[p x CPD  =  OFF               ]
+"18
+[p x BOREN  =  OFF             ]
+"19
+[p x IESO  =  OFF              ]
+"20
+[p x FCMEN  =  OFF             ]
 "21
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"22
-[e = _TRISD -> -> 0 `i `uc ]
-"23
-[e = _PORTD -> -> 0 `i `uc ]
+[p x LVP  =  OFF               ]
+"24
+[p x BOR4V  =  BOR40V          ]
 "25
-[e :U 144 ]
+[p x WRT  =  OFF               ]
+"3 gpio.c
+[v _initPins `(v ~T0 @X0 1 ef ]
 {
-"26
-[e = _PORTD -> -> 255 `i `uc ]
-"27
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"29
-[e = _PORTD -> -> 0 `i `uc ]
-"30
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"31
-}
-[e :U 143 ]
-[e $U 144  ]
-[e :U 145 ]
-"32
+[e :U _initPins ]
+[f ]
+"4
+[e =& _TRISD -> ~ << -> 1 `i -> _RD0 `i `Vuc ]
+"5
 [e :UE 142 ]
 }
