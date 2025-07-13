@@ -1,0 +1,41 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"15 ./gpio.h
+[p x FOSC  =  INTRC_NOCLKOUT   ]
+"16
+[p x WDTE  =  OFF              ]
+"17
+[p x PWRTE  =  ON              ]
+"18
+[p x MCLRE  =  OFF             ]
+"19
+[p x CP  =  OFF                ]
+"20
+[p x CPD  =  OFF               ]
+"21
+[p x BOREN  =  OFF             ]
+"22
+[p x IESO  =  OFF              ]
+"23
+[p x FCMEN  =  OFF             ]
+"24
+[p x LVP  =  OFF               ]
+"27
+[p x BOR4V  =  BOR40V          ]
+"28
+[p x WRT  =  OFF               ]
+"3 gpio.c
+[v _initPins `(v ~T0 @X0 1 ef ]
+{
+[e :U _initPins ]
+[f ]
+"4
+[e =| *U -> -> 3 `i `*Vuc -> << -> 1 `i -> 5 `i `uc ]
+"5
+[e =& *U -> -> 136 `i `*Vuc -> ~ << -> 1 `i -> 0 `i `uc ]
+"7
+[e =& *U -> -> 3 `i `*Vuc -> ~ << -> 1 `i -> 5 `i `uc ]
+"8
+[e =| *U -> -> 8 `i `*Vuc -> << -> 1 `i -> 0 `i `uc ]
+"9
+[e :UE 1 ]
+}
