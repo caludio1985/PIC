@@ -563,11 +563,18 @@ EECON1 equ 018Ch ;#
 EECON2 equ 018Dh ;# 
 	debug_source C
 	FNCALL	_main,_initPins
+	FNCALL	_main,_sensePins
 	FNROOT	_main
+	global	_PORTB
+_PORTB	set	0x6
 	global	_PORTD
 _PORTD	set	0x8
 	global	_TRISD
 _TRISD	set	0x88
+	global	_TRISB
+_TRISB	set	0x86
+	global	_ANSELH
+_ANSELH	set	0x189
 ; #config settings
 	config pad_punits      = on
 	config apply_mask      = off
@@ -607,8 +614,10 @@ psect	cstackCOMMON,class=COMMON,space=1,noexec
 global __pcstackCOMMON
 __pcstackCOMMON:
 ?_initPins:	; 1 bytes @ 0x0
+?_sensePins:	; 1 bytes @ 0x0
 ?_main:	; 1 bytes @ 0x0
 ??_initPins:	; 1 bytes @ 0x0
+??_sensePins:	; 1 bytes @ 0x0
 ??_main:	; 1 bytes @ 0x0
 ;!
 ;!Data Sizes:
@@ -666,6 +675,9 @@ __pcstackCOMMON:
 ;! ---------------------------------------------------------------------------------
 ;! (0) _main                                                 0     0      0       0
 ;!                           _initPins
+;!                          _sensePins
+;! ---------------------------------------------------------------------------------
+;! (1) _sensePins                                            0     0      0       0
 ;! ---------------------------------------------------------------------------------
 ;! (1) _initPins                                             0     0      0       0
 ;! ---------------------------------------------------------------------------------
@@ -676,6 +688,7 @@ __pcstackCOMMON:
 ;!
 ;! _main (ROOT)
 ;!   _initPins
+;!   _sensePins
 ;!
 
 ;!Address spaces:
@@ -720,6 +733,7 @@ __pcstackCOMMON:
 ;; Hardware stack levels required when called: 1
 ;; This function calls:
 ;;		_initPins
+;;		_sensePins
 ;; This function is called by:
 ;;		Startup code after reset
 ;; This function uses a non-reentrant model
@@ -739,15 +753,14 @@ _main:
 ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
 	line	5
 	
-l563:	
+l582:	
 	fcall	_initPins
-	line	8
+	line	7
 	
-l565:	
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	bsf	(8)+(4/8),(4)&7	;volatile
-	goto	l565
+l9:	
+	line	8
+	fcall	_sensePins
+	goto	l9
 	global	start
 	ljmp	start
 	callstack 0
@@ -755,6 +768,77 @@ l565:
 GLOBAL	__end_of_main
 	__end_of_main:
 	signat	_main,89
+	global	_sensePins
+
+;; *************** function _sensePins *****************
+;; Defined at:
+;;		line 11 in file "gpio.c"
+;; Parameters:    Size  Location     Type
+;;		None
+;; Auto vars:     Size  Location     Type
+;;		None
+;; Return value:  Size  Location     Type
+;;                  1    wreg      void 
+;; Registers used:
+;;		wreg, status,2, status,0
+;; Tracked objects:
+;;		On entry : 0/0
+;;		On exit  : 0/0
+;;		Unchanged: 0/0
+;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+;;      Params:         0       0       0       0       0
+;;      Locals:         0       0       0       0       0
+;;      Temps:          0       0       0       0       0
+;;      Totals:         0       0       0       0       0
+;;Total ram usage:        0 bytes
+;; Hardware stack levels used: 1
+;; This function calls:
+;;		Nothing
+;; This function is called by:
+;;		_main
+;; This function uses a non-reentrant model
+;;
+psect	text1,local,class=CODE,delta=2,merge=1,group=0
+	file	"gpio.c"
+	line	11
+global __ptext1
+__ptext1:	;psect for function _sensePins
+psect	text1
+	file	"gpio.c"
+	line	11
+	
+_sensePins:	
+;incstack = 0
+	callstack 7
+; Regs used in _sensePins: [wreg+status,2+status,0]
+	line	14
+	
+l578:	
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	btfss	(6),(0)&7	;volatile
+	goto	u11
+	goto	u10
+u11:
+	goto	l28
+u10:
+	
+l580:	
+	movlw	low(0FEh)
+	andwf	(8),f	;volatile
+	goto	l30
+	line	16
+	
+l28:	
+	bsf	(8)+(0/8),(0)&7	;volatile
+	line	17
+	
+l30:	
+	return
+	callstack 0
+GLOBAL	__end_of_sensePins
+	__end_of_sensePins:
+	signat	_sensePins,89
 	global	_initPins
 
 ;; *************** function _initPins *****************
@@ -785,12 +869,11 @@ GLOBAL	__end_of_main
 ;;		_main
 ;; This function uses a non-reentrant model
 ;;
-psect	text1,local,class=CODE,delta=2,merge=1,group=0
-	file	"gpio.c"
+psect	text2,local,class=CODE,delta=2,merge=1,group=0
 	line	3
-global __ptext1
-__ptext1:	;psect for function _initPins
-psect	text1
+global __ptext2
+__ptext2:	;psect for function _initPins
+psect	text2
 	file	"gpio.c"
 	line	3
 	
@@ -800,14 +883,28 @@ _initPins:
 ; Regs used in _initPins: [wreg+status,2+status,0]
 	line	4
 	
-l561:	
+l574:	
 	movlw	low(0EFh)
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	andwf	(136)^080h,f	;volatile
+	bsf	status, 5	;RP0=1, select bank3
+	bsf	status, 6	;RP1=1, select bank3
+	andwf	(393)^0180h,f	;volatile
 	line	5
 	
-l17:	
+l576:	
+	bsf	status, 5	;RP0=1, select bank1
+	bcf	status, 6	;RP1=0, select bank1
+	bsf	(134)^080h+(0/8),(0)&7	;volatile
+	line	7
+	movlw	low(0FEh)
+	andwf	(136)^080h,f	;volatile
+	line	8
+	movlw	low(0FEh)
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	andwf	(8),f	;volatile
+	line	9
+	
+l25:	
 	return
 	callstack 0
 GLOBAL	__end_of_initPins

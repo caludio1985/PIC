@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.00 build 20241204225717 
-                                                                                                           Sun Jul 13 21:51:17 2025
+                                                                                                           Mon Jul 14 15:02:25 2025
 
 
      1                           	processor	16F887
@@ -45,60 +45,61 @@ Microchip MPLAB XC8 Assembler V3.00 build 20241204225717
     39                           ;
     40                           ; Compiler options:
     41                           ;
-    42                           ; -q --opt=none --chip=16f887 main.c -L--fixupoverflow=error --std=c99 \
-    43                           ; --callgraph=none --warn=-3 --errformat=%f:%l:%c: error: (%n) %s \
-    44                           ; --warnformat=%f:%l:%c: warning: (%n) %s \
-    45                           ; --msgformat=%f:%l:%c: advisory: (%n) %s
-    46                           ;
-    47     0000                     C               set	0
-    48     0002                     Z               set	2
-    49     0002                     PCL             set	2
-    50     0000                     INDF            set	0
-    51     0003                     STATUS          equ	3
-    52     000A                     PCLATH          equ	10
-    53                           
-    54                           	psect	functab
-    55     0000                     intlevel0:
-    56     0000                     intlevel1:
-    57     0000                     intlevel2:
-    58     0000                     intlevel3:
-    59     0000                     intlevel4:
-    60     0000                     intlevel5:
-    61                           
-    62                           	psect	init
-    63     0000                     start:
-    64                           
-    65                           	psect	end_init
-    66     0000  120A  118A  2FFC   	ljmp	start_initialization	;jump to C runtime clear & initialization
-    67                           
-    68                           	psect	clrtext
-    69     0004                     FSR             set	4
-    70                           
-    71                           	psect	strings
-    72     0000                     ___stacklo      equ	0
-    73     0000                     ___stackhi      equ	0
-    74                           
-    75                           	psect	stack
-    76     0000                     ___sp:
-    77     0000                     ___int_sp:
-    78     0000                     ___stack_lo:
-    79     0000                     ___stack_hi:
-    80     0000                     ___int_stack_lo:
-    81     0000                     ___int_stack_hi:
-    82                           
-    83                           	psect	heap
-    84                           
-    85                           ; No powerup routine
-    86                           ; No interrupt routine(s)
-    87                           ; No heap to be allocated
-    88     0000                     ___heap_lo      equ	0
-    89     0000                     ___heap_hi      equ	0
+    42                           ; -q --opt=none --chip=16f887 main.c gpio.c -L--fixupoverflow=error \
+    43                           ; --std=c99 --callgraph=none --warn=-3 \
+    44                           ; --errformat=%f:%l:%c: error: (%n) %s \
+    45                           ; --warnformat=%f:%l:%c: warning: (%n) %s \
+    46                           ; --msgformat=%f:%l:%c: advisory: (%n) %s
+    47                           ;
+    48     0000                     C               set	0
+    49     0002                     Z               set	2
+    50     0002                     PCL             set	2
+    51     0000                     INDF            set	0
+    52     0003                     STATUS          equ	3
+    53     000A                     PCLATH          equ	10
+    54                           
+    55                           	psect	functab
+    56     0000                     intlevel0:
+    57     0000                     intlevel1:
+    58     0000                     intlevel2:
+    59     0000                     intlevel3:
+    60     0000                     intlevel4:
+    61     0000                     intlevel5:
+    62                           
+    63                           	psect	init
+    64     0000                     start:
+    65                           
+    66                           	psect	end_init
+    67     0000  120A  118A  2FFC   	ljmp	start_initialization	;jump to C runtime clear & initialization
+    68                           
+    69                           	psect	clrtext
+    70     0004                     FSR             set	4
+    71                           
+    72                           	psect	strings
+    73     0000                     ___stacklo      equ	0
+    74     0000                     ___stackhi      equ	0
+    75                           
+    76                           	psect	stack
+    77     0000                     ___sp:
+    78     0000                     ___int_sp:
+    79     0000                     ___stack_lo:
+    80     0000                     ___stack_hi:
+    81     0000                     ___int_stack_lo:
+    82     0000                     ___int_stack_hi:
+    83                           
+    84                           	psect	heap
+    85                           
+    86                           ; No powerup routine
+    87                           ; No interrupt routine(s)
+    88                           ; No heap to be allocated
+    89     0000                     ___heap_lo      equ	0
+    90     0000                     ___heap_hi      equ	0
 
 
 Microchip Technology PIC Macro Assembler V3.00 build 20241204225717 
-Symbol Table                                                                                               Sun Jul 13 21:51:17 2025
+Symbol Table                                                                                               Mon Jul 14 15:02:25 2025
 
-               ___sp 0000                 _main 07D1                 start 0000           ___stack_hi 0000  
+               ___sp 0000                 _main 07EE                 start 0000           ___stack_hi 0000  
          ___stack_lo 0000       ___int_stack_hi 0000       ___int_stack_lo 0000  start_initialization 07FC  
           ___heap_hi 0000            ___heap_lo 0000            ___stackhi 0000            ___stacklo 0000  
            ___int_sp 0000             intlevel0 0000             intlevel1 0000             intlevel2 0000  

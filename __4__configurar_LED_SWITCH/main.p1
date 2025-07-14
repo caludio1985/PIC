@@ -1,9 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"27 ./gpio.h
+"28 ./gpio.h
 [v _initPins `(v ~T0 @X0 0 ef ]
-"350 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"29
+[v _sensePins `(v ~T0 @X0 0 ef ]
 "52 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
 [; <" INDF equ 00h ;# ">
 "59
@@ -160,29 +160,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "3544
 [; <" EECON2 equ 018Dh ;# ">
-"12 ./gpio.h
+"13 ./gpio.h
 [p x FOSC  =  INTRC_NOCLKOUT   ]
-"13
-[p x WDTE  =  OFF              ]
 "14
-[p x PWRTE  =  ON              ]
+[p x WDTE  =  OFF              ]
 "15
-[p x MCLRE  =  OFF             ]
+[p x PWRTE  =  ON              ]
 "16
-[p x CP  =  OFF                ]
+[p x MCLRE  =  OFF             ]
 "17
-[p x CPD  =  OFF               ]
+[p x CP  =  OFF                ]
 "18
-[p x BOREN  =  OFF             ]
+[p x CPD  =  OFF               ]
 "19
-[p x IESO  =  OFF              ]
+[p x BOREN  =  OFF             ]
 "20
-[p x FCMEN  =  OFF             ]
+[p x IESO  =  OFF              ]
 "21
+[p x FCMEN  =  OFF             ]
+"22
 [p x LVP  =  OFF               ]
-"24
-[p x BOR4V  =  BOR40V          ]
 "25
+[p x BOR4V  =  BOR40V          ]
+"26
 [p x WRT  =  OFF               ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "3 main.c
@@ -196,7 +196,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 144 ]
 {
 "8
-[e =| _PORTD -> << -> 1 `i -> 4 `i `Vuc ]
+[e ( _sensePins ..  ]
 "9
 }
 [e :U 143 ]

@@ -6,7 +6,8 @@
 #define _XTAL_FREQ 4000000  // Oscilador interno a 4 MHz
 
 // configuro LED
-#define LED 4
+#define LED 5
+#define SW	0
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT  // Oscilador interno
@@ -25,5 +26,6 @@
 #pragma config WRT = OFF              // Escritura protegida apagada
 
 void initPins(void);
+void sensePins(void);
 
 #endif

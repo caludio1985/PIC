@@ -13,8 +13,9 @@
 %PSECTS
 $main.o
 cinit CODE 0 7FC 7FC 4 2 1
-text1 CODE 0 7EB 7EB 5 2 1
-maintext CODE 0 7F0 7F0 C 2 1
+text1 CODE 0 7D5 7D5 B 2 1
+text2 CODE 0 7E0 7E0 E 2 1
+maintext CODE 0 7EE 7EE E 2 1
 config CONFIG 4 2007 2007 2 2 1
 $startup.o
 end_init CODE 0 0 0 3 2 1
@@ -33,12 +34,12 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-7EA 2
+CONST 3-7D4 2
 CONST 800-1FFF 2
-ENTRY 3-7EA 2
+ENTRY 3-7D4 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
-CODE 3-7EA 2
+CODE 3-7D4 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -46,9 +47,9 @@ SFR2 100-10F 1
 SFR3 180-18F 1
 COMMON 70-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-7EA 2
+STRCODE 3-7D4 2
 STRCODE 800-1FFF 2
-STRING 3-7EA 2
+STRING 3-7D4 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -64,19 +65,27 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $main.o
-7FC cinit CODE >585:/home/caludio/PIC/__1__configurar_GPIO/main.s
-7FC cinit CODE >588:/home/caludio/PIC/__1__configurar_GPIO/main.s
-7FC cinit CODE >594:/home/caludio/PIC/__1__configurar_GPIO/main.s
-7FC cinit CODE >596:/home/caludio/PIC/__1__configurar_GPIO/main.s
-7FD cinit CODE >597:/home/caludio/PIC/__1__configurar_GPIO/main.s
-7EB text1 CODE >3:/home/caludio/PIC/__1__configurar_GPIO/gpio.c
-7EB text1 CODE >4:/home/caludio/PIC/__1__configurar_GPIO/gpio.c
-7EF text1 CODE >5:/home/caludio/PIC/__1__configurar_GPIO/gpio.c
-7F0 maintext CODE >3:/home/caludio/PIC/__1__configurar_GPIO/main.c
-7F0 maintext CODE >5:/home/caludio/PIC/__1__configurar_GPIO/main.c
-7F5 maintext CODE >8:/home/caludio/PIC/__1__configurar_GPIO/main.c
+7FC cinit CODE >592:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.s
+7FC cinit CODE >595:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.s
+7FC cinit CODE >601:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.s
+7FC cinit CODE >603:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.s
+7FD cinit CODE >604:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.s
+7E0 text2 CODE >3:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7E0 text2 CODE >4:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7E4 text2 CODE >5:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7E7 text2 CODE >7:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7E9 text2 CODE >8:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7ED text2 CODE >9:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7D5 text1 CODE >11:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7D5 text1 CODE >14:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7DE text1 CODE >16:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7DF text1 CODE >17:/home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+7EE maintext CODE >3:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.c
+7EE maintext CODE >5:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.c
+7F3 maintext CODE >7:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.c
+7F3 maintext CODE >8:/home/caludio/PIC/__4__configurar_LED_SWITCH/main.c
 $startup.o
-0 end_init CODE >85:/home/caludio/PIC/__1__configurar_GPIO/startup.s
+0 end_init CODE >85:/home/caludio/PIC/__4__configurar_LED_SWITCH/startup.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -99,7 +108,7 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __L__absolute__ 0 0 ABS 0 __absolute__ -
 __Hstrings 0 0 ABS 0 strings -
 ___sp 0 0 STACK 2 stack startup.o
-_main FE0 0 CODE 0 maintext main.o
+_main FDC 0 CODE 0 maintext main.o
 btemp 7E 0 ABS 0 - main.o
 ___stack_hi 0 0 STACK 2 stack startup.o
 ___stack_lo 0 0 STACK 2 stack startup.o
@@ -111,16 +120,19 @@ intlevel2 0 0 ENTRY 0 functab startup.o
 intlevel3 0 0 ENTRY 0 functab startup.o
 intlevel4 0 0 ENTRY 0 functab startup.o
 intlevel5 0 0 ENTRY 0 functab startup.o
-_initPins FD6 0 CODE 0 text1 main.o
+_initPins FC0 0 CODE 0 text2 main.o
 wtemp0 7E 0 ABS 0 - main.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_initPins FE0 0 CODE 0 text1 main.o
+__end_of_initPins FDC 0 CODE 0 text2 main.o
+_ANSELH 189 0 ABS 0 - main.o
 __Lmaintext 0 0 ABS 0 maintext -
 ___stackhi 0 0 ABS 0 - startup.o
 ___stacklo 0 0 ABS 0 - startup.o
 start_initialization FF8 0 CODE 0 cinit main.o
+__end_of_sensePins FC0 0 CODE 0 text1 main.o
 ___int_sp 0 0 STACK 2 stack startup.o
+_sensePins FAA 0 CODE 0 text1 main.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -162,7 +174,7 @@ __S1 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
 reset_vec 0 0 CODE 0 reset_vec startup.o
-__pmaintext FE0 0 CODE 0 maintext main.o
+__pmaintext FDC 0 CODE 0 maintext main.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Lspace_0 0 0 ABS 0 - -
@@ -176,7 +188,8 @@ end_of_initialization FF8 0 CODE 0 cinit main.o
 __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext1 FD6 0 CODE 0 text1 main.o
+__ptext1 FAA 0 CODE 0 text1 main.o
+__ptext2 FC0 0 CODE 0 text2 main.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
@@ -189,7 +202,9 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON main.o
 __Hend_init 6 0 CODE 0 end_init -
 __end_of_main FF8 0 CODE 0 maintext main.o
+_PORTB 6 0 ABS 0 - main.o
 _PORTD 8 0 ABS 0 - main.o
+_TRISB 86 0 ABS 0 - main.o
 _TRISD 88 0 ABS 0 - main.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
@@ -222,8 +237,9 @@ ___int_stack_lo 0 0 STACK 2 stack startup.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FC FF8 4 2
-text1 0 7EB FD6 5 2
-maintext 0 7F0 FE0 C 2
+text1 0 7D5 FAA B 2
+text2 0 7E0 FC0 E 2
+maintext 0 7EE FDC E 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

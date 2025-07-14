@@ -1,8 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "1600 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"4183
-[v _RD0 `Vb ~T0 @X0 0 e@64 ]
 "52 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
 [; <" INDF equ 00h ;# ">
 "59
@@ -189,7 +187,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _initPins ]
 [f ]
 "4
-[e =& _TRISD -> ~ << -> 1 `i -> _RD0 `i `Vuc ]
+[e =& _TRISD -> ~ << -> 1 `i -> 4 `i `Vuc ]
 "5
 [e :UE 142 ]
 }

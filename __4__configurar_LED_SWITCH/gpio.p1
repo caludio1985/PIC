@@ -1,9 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"27 ./gpio.h
-[v _initPins `(v ~T0 @X0 0 ef ]
-"350 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
+"3447 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"1476
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1600
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"350
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"226
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "52 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
 [; <" INDF equ 00h ;# ">
 "59
@@ -160,48 +165,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "3544
 [; <" EECON2 equ 018Dh ;# ">
-"12 ./gpio.h
+"13 ./gpio.h
 [p x FOSC  =  INTRC_NOCLKOUT   ]
-"13
-[p x WDTE  =  OFF              ]
 "14
-[p x PWRTE  =  ON              ]
+[p x WDTE  =  OFF              ]
 "15
-[p x MCLRE  =  OFF             ]
+[p x PWRTE  =  ON              ]
 "16
-[p x CP  =  OFF                ]
+[p x MCLRE  =  OFF             ]
 "17
-[p x CPD  =  OFF               ]
+[p x CP  =  OFF                ]
 "18
-[p x BOREN  =  OFF             ]
+[p x CPD  =  OFF               ]
 "19
-[p x IESO  =  OFF              ]
+[p x BOREN  =  OFF             ]
 "20
-[p x FCMEN  =  OFF             ]
+[p x IESO  =  OFF              ]
 "21
+[p x FCMEN  =  OFF             ]
+"22
 [p x LVP  =  OFF               ]
-"24
-[p x BOR4V  =  BOR40V          ]
 "25
+[p x BOR4V  =  BOR40V          ]
+"26
 [p x WRT  =  OFF               ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"3 main.c
-[v _main `(v ~T0 @X0 1 ef ]
+"3 gpio.c
+[v _initPins `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _initPins ]
 [f ]
+"4
+[e =& _ANSELH -> ~ << -> 1 `i -> 4 `i `Vuc ]
 "5
-[e ( _initPins ..  ]
+[e =| _TRISB -> << -> 1 `i -> 0 `i `Vuc ]
 "7
-[e :U 144 ]
-{
+[e =& _TRISD -> ~ << -> 1 `i -> 0 `i `Vuc ]
 "8
-[e =| _PORTD -> << -> 1 `i -> 4 `i `Vuc ]
+[e =& _PORTD -> ~ << -> 1 `i -> 0 `i `Vuc ]
 "9
-}
-[e :U 143 ]
-[e $U 144  ]
-[e :U 145 ]
-"10
 [e :UE 142 ]
+}
+"11
+[v _sensePins `(v ~T0 @X0 1 ef ]
+{
+[e :U _sensePins ]
+[f ]
+"14
+[e $ ! != & -> _PORTB `i << -> 1 `i -> 0 `i -> 0 `i 144  ]
+[e =& _PORTD -> ~ << -> 1 `i -> 0 `i `Vuc ]
+[e $U 145  ]
+"16
+[e :U 144 ]
+[e =| _PORTD -> << -> 1 `i -> 0 `i `Vuc ]
+[e :U 145 ]
+"17
+[e :UE 143 ]
 }

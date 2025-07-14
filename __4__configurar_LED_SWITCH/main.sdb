@@ -11,21 +11,34 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"3 /home/caludio/PIC/__1__configurar_GPIO/gpio.c
+"3 /home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
 [v _initPins initPins `(v  1 e 1 0 ]
-"3 /home/caludio/PIC/__1__configurar_GPIO/main.c
+"11
+[v _sensePins sensePins `(v  1 e 1 0 ]
+"3 /home/caludio/PIC/__4__configurar_LED_SWITCH/main.c
 [v _main main `(v  1 e 1 0 ]
-"350 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
+"226 /opt/microchip/xc8/v3.00/pic/include/proc/pic16f887.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"350
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1476
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1600
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-"3 /home/caludio/PIC/__1__configurar_GPIO/main.c
+"3447
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3 /home/caludio/PIC/__4__configurar_LED_SWITCH/main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "10
 } 0
-"3 /home/caludio/PIC/__1__configurar_GPIO/gpio.c
+"11 /home/caludio/PIC/__4__configurar_LED_SWITCH/gpio.c
+[v _sensePins sensePins `(v  1 e 1 0 ]
+{
+"17
+} 0
+"3
 [v _initPins initPins `(v  1 e 1 0 ]
 {
-"5
+"9
 } 0

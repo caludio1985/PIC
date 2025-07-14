@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.00 build 20241204225717 
-                                                                                                           Fri Jul 11 15:30:09 2025
+                                                                                                           Sun Jul 13 21:57:57 2025
 
 
      1                           	processor	16F887
@@ -97,9 +97,9 @@ Microchip MPLAB XC8 Assembler V3.00 build 20241204225717
 
 
 Microchip Technology PIC Macro Assembler V3.00 build 20241204225717 
-Symbol Table                                                                                               Fri Jul 11 15:30:09 2025
+Symbol Table                                                                                               Sun Jul 13 21:57:57 2025
 
-               ___sp 0000                 _main 07E3                 start 0000           ___stack_hi 0000  
+               ___sp 0000                 _main 07F0                 start 0000           ___stack_hi 0000  
          ___stack_lo 0000       ___int_stack_hi 0000       ___int_stack_lo 0000  start_initialization 07FC  
           ___heap_hi 0000            ___heap_lo 0000            ___stackhi 0000            ___stacklo 0000  
            ___int_sp 0000             intlevel0 0000             intlevel1 0000             intlevel2 0000  

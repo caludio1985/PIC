@@ -3,12 +3,14 @@ __S1 0 0 ABS 0
 __S3 0 0 ABS 0
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
-_main 7F0 0 CODE 0
+_main 7EE 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 0 0 CODE 0
+_TRISB 86 0 ABS 0
 reset_vec 0 0 CODE 0
 _TRISD 88 0 ABS 0
+_PORTB 6 0 ABS 0
 _PORTD 8 0 ABS 0
 wtemp0 7E 0 ABS 0
 __Hconfig 2009 0 CONFIG 4
@@ -22,8 +24,9 @@ __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
-_initPins 7EB 0 CODE 0
+_initPins 7E0 0 CODE 0
 ___int_sp 0 0 STACK 2
+_ANSELH 189 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
 __Hsfr0 0 0 ABS 0
@@ -35,6 +38,7 @@ __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
 __Lsfr3 0 0 ABS 0
 ___heap_hi 0 0 ABS 0
+__end_of_sensePins 7E0 0 CODE 0
 ___stackhi 0 0 ABS 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
@@ -50,6 +54,7 @@ __Ltext 0 0 ABS 0
 ___heap_lo 0 0 ABS 0
 end_of_initialization 7FC 0 CODE 0
 ___stacklo 0 0 ABS 0
+_sensePins 7D5 0 CODE 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 __Hbank0 0 0 ABS 0
@@ -63,7 +68,8 @@ __Lbank3 0 0 ABS 0
 ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-__ptext1 7EB 0 CODE 0
+__ptext1 7D5 0 CODE 0
+__ptext2 7E0 0 CODE 0
 ___stack_hi 0 0 STACK 2
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -82,7 +88,7 @@ __Hcinit 800 0 CODE 0
 __Lcinit 7FC 0 CODE 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
-__end_of_initPins 7F0 0 CODE 0
+__end_of_initPins 7EE 0 CODE 0
 __Hspace_4 4010 0 ABS 0
 __Lspace_4 0 0 ABS 0
 ___stack_lo 0 0 STACK 2
@@ -103,29 +109,38 @@ start_initialization 7FC 0 CODE 0
 ___int_stack_lo 0 0 STACK 2
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
-__pmaintext 7F0 0 CODE 0
+__pmaintext 7EE 0 CODE 0
 __initialization 7FC 0 CODE 0
 %segments
 reset_vec 0 5 CODE 0 0
 cinit FF8 FFF CODE FF8 0
-maintext FE0 FF7 CODE FE0 0
-text1 FD6 FDF CODE FD6 0
+maintext FDC FF7 CODE FDC 0
+text2 FC0 FDB CODE FC0 0
+text1 FAA FBF CODE FAA 0
 %locals
 startup.o
 startup.s
 85 0 0 CODE 0
 main.o
 main.s
-585 7FC 0 CODE 0
-588 7FC 0 CODE 0
-594 7FC 0 CODE 0
-596 7FC 0 CODE 0
-597 7FD 0 CODE 0
+592 7FC 0 CODE 0
+595 7FC 0 CODE 0
+601 7FC 0 CODE 0
+603 7FC 0 CODE 0
+604 7FD 0 CODE 0
 main.c
-3 7F0 0 CODE 0
-5 7F0 0 CODE 0
-8 7F5 0 CODE 0
+3 7EE 0 CODE 0
+5 7EE 0 CODE 0
+7 7F3 0 CODE 0
+8 7F3 0 CODE 0
 gpio.c
-3 7EB 0 CODE 0
-4 7EB 0 CODE 0
-5 7EF 0 CODE 0
+11 7D5 0 CODE 0
+14 7D5 0 CODE 0
+16 7DE 0 CODE 0
+17 7DF 0 CODE 0
+3 7E0 0 CODE 0
+4 7E0 0 CODE 0
+5 7E4 0 CODE 0
+7 7E7 0 CODE 0
+8 7E9 0 CODE 0
+9 7ED 0 CODE 0
