@@ -1,0 +1,21 @@
+Warning[207] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 1 : Found label after column 1. (LISTP)
+Warning[205] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 7 : Found directive in column 1. (__CONFIG)
+Warning[205] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 8 : Found directive in column 1. (__CONFIG)
+Warning[205] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 28 : Found directive in column 1. (CBLOCK)
+Warning[205] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 33 : Found directive in column 1. (ENDC)
+Warning[205] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 35 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 36 : Found opcode in column 1. (GOTO)
+Warning[205] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 37 : Found directive in column 1. (ORG)
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 45 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 47 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 53 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 59 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 60 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 62 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 63 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 69 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 83 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 84 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 85 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 86 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\CLAUDIO\DESKTOP\FULL-BRIDGE\MAIN.ASM 97 : Register in operand not in bank 0.  Ensure that bank bits are correct.

@@ -55,6 +55,7 @@ INICIO
 ;********* Configuro pines de entrada *****************
 ;******************************************************
 			BANCO_2
+;			BSF		TRISD,4
 			BSF		TRISB,0
 			BSF		TRISB,2
 			MOVLW	B'00000001'
@@ -83,8 +84,13 @@ TIME		BTFSS	PIR1,1
 			BCF		TRISD,6
 			BCF		TRISD,5
 			BCF		TRISC,2
+			BANCO_1
+			BCF		PORTD,7
+			BCF		PORTD,6
+			BCF		PORTD,5
+			BCF		PORTC,2
 ;****************************************************
-;******** configuro modulo ADC ****************
+;******** Configuro modulo ADC ****************
 ;****************************************************
 			BANCO_2
 			MOVLW	B'00000000' ;JUSTIF. A LA IZQ.
